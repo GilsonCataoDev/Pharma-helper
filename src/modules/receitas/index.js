@@ -22,11 +22,9 @@ let checkedItems = new Set();
  * @returns {string} HTML string.
  */
 export function render() {
-  // If a rule is selected, show the checklist screen
   if (selectedRegra) {
     return renderChecklist();
   }
-  // Otherwise show the type selection screen
   return renderTypeSelection();
 }
 
@@ -35,7 +33,9 @@ export function render() {
  */
 function renderTypeSelection() {
   const typeCardsHtml = regras.map((regra, index) => {
-    const listaBadge = getListaBadge(regra.lista);
+    const listaBadge = getListaBadge(regra);
+    const listaDesc = getListaDescription(regra);
+
     return /* html */ `
       <button
         class="prescription-type-card text-left w-full stagger-item animate-fade-in"
@@ -45,21 +45,21 @@ function renderTypeSelection() {
       >
         <div class="flex items-center justify-between gap-2">
           <div class="min-w-0">
-            <h3 class="font-semibold text-sm text-gray-800 leading-tight">${regra.tipo}</h3>
-            <p class="text-xs text-gray-500 mt-1">${regra.lista}</p>
+            <h3 class="font-bold text-sm text-gray-800 leading-tight">${regra.tipo}</h3>
+            <p class="text-xs text-gray-500 mt-1 leading-normal">${listaDesc}</p>
           </div>
           <div class="flex-shrink-0">
             ${listaBadge}
           </div>
         </div>
         <div class="flex flex-wrap gap-2 mt-3">
-          <span class="info-badge info-badge--blue">
+          <span class="info-badge info-badge--blue text-xs">
             <i data-lucide="calendar" class="w-3 h-3"></i>
-            ${regra.validade} dias
+            ${regra.validade || 30} dias
           </span>
-          <span class="info-badge ${regra.retencao === 'Não retém' ? 'info-badge--green' : 'info-badge--yellow'}">
-            <i data-lucide="${regra.retencao === 'Não retém' ? 'unlock' : 'lock'}" class="w-3 h-3"></i>
-            ${regra.retencao}
+          <span class="info-badge ${(regra.retencao || '').includes('Não') ? 'info-badge--green' : 'info-badge--yellow'} text-xs">
+            <i data-lucide="${(regra.retencao || '').includes('Não') ? 'unlock' : 'lock'}" class="w-3 h-3"></i>
+            ${regra.retencao || 'Retém'}
           </span>
         </div>
       </button>
@@ -69,8 +69,11 @@ function renderTypeSelection() {
   return /* html */ `
     <div class="p-4 space-y-4">
       <div class="animate-fade-in">
-        <h2 class="text-base font-bold text-gray-800">Selecione o Tipo de Receita</h2>
-        <p class="text-xs text-gray-500 mt-1">Escolha o tipo para ver os requisitos de conferência</p>
+        <h2 class="text-base font-bold text-gray-800 flex items-center gap-2">
+          <i data-lucide="clipboard-check" class="w-5 h-5 text-emerald-600"></i>
+          Selecione o Tipo de Receita
+        </h2>
+        <p class="text-xs text-gray-500 mt-1">Escolha o modelo para conferir requisitos legais e itens obrigatórios.</p>
       </div>
 
       <div class="space-y-3" id="receitas-type-list">
@@ -85,7 +88,7 @@ function renderTypeSelection() {
  */
 function renderChecklist() {
   const items = selectedRegra.itensObrigatorios || [];
-  const allChecked = checkedItems.size === items.length;
+  const allChecked = checkedItems.size === items.length && items.length > 0;
 
   const checklistHtml = items.map((item, i) => {
     const isChecked = checkedItems.has(i);
@@ -107,7 +110,7 @@ function renderChecklist() {
     resultHtml = /* html */ `
       <div class="result-banner result-banner--ok animate-slide-up">
         <i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0"></i>
-        <span>Receita OK para dispensação!</span>
+        <span>Receita conferida e OK para dispensação!</span>
       </div>
     `;
   } else if (checkedItems.size > 0 && checkedItems.size < items.length) {
@@ -120,14 +123,15 @@ function renderChecklist() {
     `;
   }
 
-  const listaBadge = getListaBadge(selectedRegra.lista);
+  const listaBadge = getListaBadge(selectedRegra);
+  const listaDesc = getListaDescription(selectedRegra);
 
   return /* html */ `
     <div class="p-4 space-y-4">
       <!-- Back Button -->
-      <button id="receitas-back-btn" class="flex items-center gap-1 text-emerald-600 font-medium text-sm animate-fade-in" aria-label="Voltar">
+      <button id="receitas-back-btn" class="flex items-center gap-1.5 text-emerald-600 font-bold text-xs animate-fade-in" aria-label="Voltar">
         <i data-lucide="arrow-left" class="w-4 h-4"></i>
-        <span>Voltar</span>
+        <span>Voltar aos Tipos de Receita</span>
       </button>
 
       <!-- Header Card -->
@@ -135,33 +139,39 @@ function renderChecklist() {
         <div class="flex items-start justify-between gap-2">
           <div>
             <h2 class="font-bold text-sm text-gray-800">${selectedRegra.tipo}</h2>
-            <p class="text-xs text-gray-500 mt-1">${selectedRegra.lista}</p>
+            <p class="text-xs text-gray-500 mt-1">${listaDesc}</p>
           </div>
           ${listaBadge}
         </div>
 
         <!-- Info Badges -->
         <div class="flex flex-wrap gap-2 mt-3">
-          <span class="info-badge info-badge--blue">
+          <span class="info-badge info-badge--blue text-xs">
             <i data-lucide="calendar" class="w-3 h-3"></i>
-            Válida por ${selectedRegra.validade} dias
+            Válida por ${selectedRegra.validade || 30} dias
           </span>
-          <span class="info-badge ${selectedRegra.retencao === 'Não retém' ? 'info-badge--green' : 'info-badge--yellow'}">
-            <i data-lucide="${selectedRegra.retencao === 'Não retém' ? 'unlock' : 'lock'}" class="w-3 h-3"></i>
-            ${selectedRegra.retencao}
+          <span class="info-badge ${(selectedRegra.retencao || '').includes('Não') ? 'info-badge--green' : 'info-badge--yellow'} text-xs">
+            <i data-lucide="${(selectedRegra.retencao || '').includes('Não') ? 'unlock' : 'lock'}" class="w-3 h-3"></i>
+            ${selectedRegra.retencao || 'Retém'}
           </span>
-          <span class="info-badge info-badge--green">
+          <span class="info-badge info-badge--green text-xs">
             <i data-lucide="hash" class="w-3 h-3"></i>
-            ${selectedRegra.quantidadeMax}
+            ${selectedRegra.quantidadeMax || 'Conforme prescrição'}
           </span>
         </div>
+
+        ${selectedRegra.observacoes ? /* html */ `
+          <div class="mt-3 pt-2.5 border-t border-gray-100 text-[0.7rem] text-gray-500 leading-normal">
+            <strong>Legislação:</strong> ${selectedRegra.observacoes}
+          </div>
+        ` : ''}
       </div>
 
       <!-- Checklist -->
       <div class="pharma-card !p-0 animate-fade-in" style="animation-delay: 0.1s;">
         <div class="flex items-center justify-between px-4 py-3 border-b border-gray-100">
-          <h3 class="font-semibold text-sm text-gray-700">Itens Obrigatórios</h3>
-          <span class="text-xs text-gray-400">${checkedItems.size}/${items.length}</span>
+          <h3 class="font-bold text-xs uppercase tracking-wider text-gray-700">Itens Obrigatórios de Conferência</h3>
+          <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">${checkedItems.size}/${items.length}</span>
         </div>
         <ul class="checklist" id="receitas-checklist" role="list">
           ${checklistHtml}
@@ -174,12 +184,12 @@ function renderChecklist() {
       </div>
 
       <!-- Actions -->
-      <div class="flex gap-3 animate-fade-in" style="animation-delay: 0.15s;">
-        <button id="receitas-check-all" class="flex-1 py-2.5 rounded-xl text-sm font-semibold transition-colors
-          ${allChecked ? 'bg-gray-100 text-gray-400' : 'bg-emerald-600 text-white active:bg-emerald-700'}">
-          ${allChecked ? 'Tudo Verificado ✓' : 'Marcar Todos'}
+      <div class="flex gap-2.5 animate-fade-in" style="animation-delay: 0.15s;">
+        <button id="receitas-check-all" class="flex-1 py-3 rounded-xl text-xs font-bold transition-colors
+          ${allChecked ? 'bg-gray-200 text-gray-500' : 'bg-emerald-600 text-white active:bg-emerald-700 shadow-sm'}">
+          ${allChecked ? 'Tudo Conferido ✓' : 'Marcar Todos'}
         </button>
-        <button id="receitas-reset" class="px-4 py-2.5 rounded-xl text-sm font-semibold bg-gray-100 text-gray-600 active:bg-gray-200 transition-colors">
+        <button id="receitas-reset" class="px-4 py-3 rounded-xl text-xs font-bold bg-gray-100 text-gray-600 active:bg-gray-200 transition-colors">
           Limpar
         </button>
       </div>
@@ -191,39 +201,49 @@ function renderChecklist() {
 // Helpers
 // ──────────────────────────────────────
 
-/**
- * Returns a colored badge based on the lista type.
- */
-function getListaBadge(lista) {
-  if (lista.includes('A1') || lista.includes('A2') || lista.includes('A3') || lista.includes('Entorpecente')) {
-    return '<span class="severity-badge" style="background:#dc2626;color:white;">A</span>';
+function getListaDescription(regra) {
+  if (!regra) return '';
+  if (Array.isArray(regra.listas) && regra.listas.length > 0) {
+    return regra.listas.join(', ');
   }
-  if (lista.includes('B1') || lista.includes('B2') || lista.includes('Psicotrópico')) {
-    return '<span class="severity-badge" style="background:#3b82f6;color:white;">B</span>';
+  return regra.lista || regra.descricao || '';
+}
+
+function getListaBadge(regra) {
+  if (!regra) return '<span class="severity-badge" style="background:#059669;color:white;">LIVRE</span>';
+
+  const codigo = (regra.codigo || '').toUpperCase();
+  const raw = [
+    regra.tipo || '',
+    regra.codigo || '',
+    regra.lista || '',
+    Array.isArray(regra.listas) ? regra.listas.join(' ') : ''
+  ].join(' ').toUpperCase();
+
+  if (raw.includes('A1') || raw.includes('A2') || raw.includes('A3') || raw.includes('ENTORPECENTE')) {
+    return '<span class="severity-badge" style="background:#dc2626;color:white;">A (AMARELA)</span>';
   }
-  if (lista.includes('C1') || lista.includes('C2') || lista.includes('C5') || lista.includes('Especial') || lista.includes('Retinóide')) {
-    return '<span class="severity-badge" style="background:#f59e0b;color:white;">C</span>';
+  if (raw.includes('B1') || raw.includes('B2') || raw.includes('PSICOTRÓPICO') || raw.includes('AZUL')) {
+    return '<span class="severity-badge" style="background:#2563eb;color:white;">B (AZUL)</span>';
   }
-  if (lista.includes('Antimicrobiano')) {
-    return '<span class="severity-badge" style="background:#8b5cf6;color:white;">ATM</span>';
+  if (raw.includes('C1') || raw.includes('C5') || raw.includes('C2') || raw.includes('RETINÓIDE')) {
+    return '<span class="severity-badge" style="background:#d97706;color:white;">C (ESPECIAL)</span>';
   }
-  return '<span class="severity-badge" style="background:#6b7280;color:white;">—</span>';
+  if (raw.includes('ANTIMICROBIANO') || raw.includes('ATM')) {
+    return '<span class="severity-badge" style="background:#7c3aed;color:white;">ANTIMICROBIANO</span>';
+  }
+
+  return '<span class="severity-badge" style="background:#059669;color:white;">LIVRE</span>';
 }
 
 // ──────────────────────────────────────
 // Init — Event Listeners
 // ──────────────────────────────────────
 
-/**
- * Initialize the receitas module: load data & bind events.
- */
 export async function init() {
-  // Load rules from DB
   regras = await getReceitasRegras();
 
-  // If we don't have a selectedRegra, we're on the type selection screen
   if (!selectedRegra) {
-    // Re-render now that data is loaded
     const content = document.getElementById('module-content');
     if (content && regras.length > 0) {
       content.innerHTML = renderTypeSelection();
@@ -235,9 +255,6 @@ export async function init() {
   }
 }
 
-/**
- * Bind type selection card clicks.
- */
 function bindTypeSelection() {
   const list = document.getElementById('receitas-type-list');
   if (!list) return;
@@ -250,7 +267,6 @@ function bindTypeSelection() {
     selectedRegra = regras[index];
     checkedItems.clear();
 
-    // Re-render the module
     const content = document.getElementById('module-content');
     if (content) {
       content.innerHTML = renderChecklist();
@@ -260,16 +276,12 @@ function bindTypeSelection() {
   });
 }
 
-/**
- * Bind checklist interactions.
- */
 function bindChecklist() {
   const checklistEl = document.getElementById('receitas-checklist');
   const backBtn = document.getElementById('receitas-back-btn');
   const checkAllBtn = document.getElementById('receitas-check-all');
   const resetBtn = document.getElementById('receitas-reset');
 
-  // Toggle individual items
   if (checklistEl) {
     checklistEl.addEventListener('click', (e) => {
       const item = e.target.closest('.checklist-item');
@@ -286,7 +298,6 @@ function bindChecklist() {
     });
   }
 
-  // Back to type selection
   if (backBtn) {
     backBtn.addEventListener('click', () => {
       selectedRegra = null;
@@ -301,7 +312,6 @@ function bindChecklist() {
     });
   }
 
-  // Check all
   if (checkAllBtn) {
     checkAllBtn.addEventListener('click', () => {
       if (!selectedRegra) return;
@@ -313,7 +323,6 @@ function bindChecklist() {
     });
   }
 
-  // Reset
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
       checkedItems.clear();
@@ -322,9 +331,6 @@ function bindChecklist() {
   }
 }
 
-/**
- * Refresh the checklist UI without full re-render.
- */
 function refreshChecklist() {
   const content = document.getElementById('module-content');
   if (content) {
@@ -334,9 +340,6 @@ function refreshChecklist() {
   }
 }
 
-/**
- * Reset module state (called when navigating away).
- */
 export function destroy() {
   selectedRegra = null;
   checkedItems.clear();

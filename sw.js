@@ -1,7 +1,7 @@
-// FarmaApp Service Worker v1.1.0
-const CACHE_NAME = 'farmaapp-v1.1';
-const STATIC_CACHE = 'farmaapp-static-v1.1';
-const DYNAMIC_CACHE = 'farmaapp-dynamic-v1.1';
+// FarmaApp Service Worker v1.2.0
+const CACHE_NAME = 'farmaapp-v1.2';
+const STATIC_CACHE = 'farmaapp-static-v1.2';
+const DYNAMIC_CACHE = 'farmaapp-dynamic-v1.2';
 
 // Determine base scope dynamically
 const BASE_PATH = self.location.pathname.substring(0, self.location.pathname.lastIndexOf('/') + 1);
@@ -80,7 +80,6 @@ self.addEventListener('fetch', (event) => {
         }
         return networkResponse;
       }).catch(async () => {
-        // Fallback to cached index.html for navigation requests
         if (request.mode === 'navigate') {
           const fallback = await caches.match(BASE_PATH + 'index.html');
           if (fallback) return fallback;
