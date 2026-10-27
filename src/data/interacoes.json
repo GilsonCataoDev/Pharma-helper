@@ -1,0 +1,290 @@
+[
+  {
+    "med1": "Varfarina",
+    "med2": "Ibuprofeno",
+    "severidade": "grave",
+    "descricao": "Risco elevado de hemorragia grave e sangramento gastrintestinal.",
+    "mecanismo": "Inibição plaquetária pelos AINEs associada à lesão da mucosa gástrica e anticoagulação sistêmica por antagonismo da vitamina K.",
+    "recomendacao": "Evitar combinação. Em caso de dor/febre, preferir Paracetamol em doses baixas (máx. 2g/dia) com monitorização do RNI.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Varfarina",
+    "med2": "Diclofenaco",
+    "severidade": "grave",
+    "descricao": "Risco de hemorragia severa e perfuração gastrintestinal.",
+    "mecanismo": "Efeito antiplaquetário sinérgico e erosão de mucosa gástrica.",
+    "recomendacao": "Contraindicada a associação. Optar por analgésicos sem ação antiplaquetária.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Varfarina",
+    "med2": "Amoxicilina + Clavulanato",
+    "severidade": "moderada",
+    "descricao": "Aumento do RNI (INR) e potencialização do efeito anticoagulante.",
+    "mecanismo": "Redução da flora bacteriana intestinal produtora de vitamina K.",
+    "recomendacao": "Monitorar RNI com maior frequência durante e após o término do antibiótico.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Varfarina",
+    "med2": "Fluconazol",
+    "severidade": "grave",
+    "descricao": "Aumento acentuado do efeito anticoagulante da Varfarina com risco hemorrágico crítico.",
+    "mecanismo": "Inibição potente da enzima CYP2C9 hepática, diminuindo o clearance da S-varfarina.",
+    "recomendacao": "Se indispensável, reduzir dose da Varfarina e acompanhar RNI rigorosamente.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Fluoxetina",
+    "med2": "Tramadol",
+    "severidade": "grave",
+    "descricao": "Risco de Síndrome Serotoninérgica potencialmente fatal e risco aumentado de convulsões.",
+    "mecanismo": "Ambos aumentam a neurotransmissão serotoninérgica no SNC; a Fluoxetina inibe a CYP2D6 que metaboliza o Tramadol.",
+    "recomendacao": "Evitar combinação. Monitorar rigidez muscular, hipertermia, confusão mental e mioclonias.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Sertralina",
+    "med2": "Tramadol",
+    "severidade": "grave",
+    "descricao": "Risco de Síndrome Serotoninérgica aguda e convulsões.",
+    "mecanismo": "Efeito serotoninérgico aditivo no sistema nervoso central.",
+    "recomendacao": "Evitar a associação. Substituir analgésico por opção não serotoninérgica.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Escitalopram",
+    "med2": "Ciprofloxacino",
+    "severidade": "grave",
+    "descricao": "Prolongamento do intervalo QT no eletrocardiograma e risco de Torsades de Pointes.",
+    "mecanismo": "Efeito aditivo no bloqueio dos canais de potássio miocárdicos (hERG).",
+    "recomendacao": "Evitar uso concomitante, principalmente em idosos ou cardiopatas.",
+    "evidencia": "Moderada"
+  },
+  {
+    "med1": "Sinvastatina",
+    "med2": "Amiodarona",
+    "severidade": "grave",
+    "descricao": "Aumento do risco de miopatia e rabdomiólise severa com insuficiência renal.",
+    "mecanismo": "Amiodarona inibe fortemente a CYP3A4, aumentando muito a concentração plasmática da Sinvastatina.",
+    "recomendacao": "A dose diária de Sinvastatina não deve exceder 20mg ao dia quando usada com Amiodarona, ou trocar por Rosuvastatina.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Sinvastatina",
+    "med2": "Fluconazol",
+    "severidade": "grave",
+    "descricao": "Risco agudo de toxicidade muscular (rabdomiólise).",
+    "mecanismo": "Inibição do metabolismo de primeira passagem e clearance da Sinvastatina.",
+    "recomendacao": "Suspender temporariamente a Sinvastatina durante o tratamento com azóis orais.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Metformina",
+    "med2": "Álcool",
+    "severidade": "grave",
+    "descricao": "Aumento expressivo do risco de Acidose Láctica e hipoglicemia severa.",
+    "mecanismo": "O etanol inibe a gliconeogênese hepática e aumenta a produção de lactato.",
+    "recomendacao": "Orientar o paciente a evitar consumo excessivo ou agudo de bebidas alcoólicas.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Clonazepam",
+    "med2": "Álcool",
+    "severidade": "grave",
+    "descricao": "Depressão respiratória severa, sedação profunda, coma e risco de óbito.",
+    "mecanismo": "Potencialização alostérica sinérgica no receptor GABA-A do SNC.",
+    "recomendacao": "Contraindicação formal de ingestão alcoólica durante tratamento com benzodiazepínicos.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Diazepam",
+    "med2": "Morfina",
+    "severidade": "grave",
+    "descricao": "Depressão respiratória potencialmente fatal e hipotensão grave.",
+    "mecanismo": "Efeito depressor sinérgico no centro respiratório bulbar.",
+    "recomendacao": "Uso conjunto requer estrita vigilância clínica e suporte ventilatório imediato.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Clonazepam",
+    "med2": "Tramadol",
+    "severidade": "grave",
+    "descricao": "Depressão do SNC, sedação extrema, bradipneia e hipotensão.",
+    "mecanismo": "Sinergismo depressor respiratório e de reflexos psicomotores.",
+    "recomendacao": "Ajustar doses e alertar expressamente o paciente sobre proibição de dirigir ou operar maquinário.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Enalapril",
+    "med2": "Espironolactona",
+    "severidade": "moderada",
+    "descricao": "Risco de Hipercalemia grave (arritmias cardíacas).",
+    "mecanismo": "IECA reduz aldosterona diminuindo excreção de potássio; Espironolactona poupa potássio nos túbulos renais.",
+    "recomendacao": "Monitorar níveis séricos de potássio e creatinina regularmente.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Losartana",
+    "med2": "Espironolactona",
+    "severidade": "moderada",
+    "descricao": "Risco elevado de Hipercalemia (níveis de potássio > 5,5 mEq/L).",
+    "mecanismo": "Bloqueio do eixo renina-angiotensina-aldosterona combinado com antagonista da aldosterona.",
+    "recomendacao": "Monitorar função renal e eletrólitos séricos.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Enalapril",
+    "med2": "Ibuprofeno",
+    "severidade": "moderada",
+    "descricao": "Redução do efeito anti-hipertensivo e deterioração aguda da função renal.",
+    "mecanismo": "AINE inibe síntese de prostaglandinas vasodilatadoras renais enquanto o IECA bloqueia a vasoconstrição da arteríola eferente.",
+    "recomendacao": "Evitar uso contínuo de AINE em pacientes hipertensos sob IECA. Preferir Dipirona ou Paracetamol.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Losartana",
+    "med2": "Diclofenaco",
+    "severidade": "moderada",
+    "descricao": "Redução do controle pressórico e risco de insuficiência renal aguda.",
+    "mecanismo": "AINE retém sódio e água e altera a hemodinâmica glomerular.",
+    "recomendacao": "Limitar o uso do AINE ao menor tempo possível (máx. 3-5 dias) e checar pressão arterial.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Omeprazol",
+    "med2": "Clopidogrel",
+    "severidade": "moderada",
+    "descricao": "Redução da eficácia antiplaquetária do Clopidogrel, aumentando risco de eventos trombóticos (AVC/IAM).",
+    "mecanismo": "Omeprazol inibe a CYP2C19, necessária para converter o Clopidogrel (pró-fármaco) em sua forma ativa.",
+    "recomendacao": "Substituir Omeprazol por Pantoprazol, que possui mínima interferência na CYP2C19.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Levotiroxina",
+    "med2": "Carbonato de Cálcio",
+    "severidade": "moderada",
+    "descricao": "Diminuição importante da absorção intestinal da Levotiroxina (hipotireoidismo descompensado).",
+    "mecanismo": "Formação de quelatos insolúveis no trato gastrintestinal em pH alterado.",
+    "recomendacao": "Administrar com intervalo mínimo de 4 horas entre os dois medicamentos.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Levotiroxina",
+    "med2": "Sulfato Ferroso",
+    "severidade": "moderada",
+    "descricao": "Quelação e absorção reduzida da Levotiroxina.",
+    "mecanismo": "Ligação do íon ferro ao hormônio tireoidiano no lúmen intestinal.",
+    "recomendacao": "Separar a tomada dos medicamentos por no mínimo 4 horas (Levotiroxina em jejum pela manhã, ferro após almoço).",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Levotiroxina",
+    "med2": "Omeprazol",
+    "severidade": "leve",
+    "descricao": "Possível redução na dissolução e absorção da Levotiroxina sódica.",
+    "mecanismo": "Aumento do pH gástrico reduz a solubilização do comprimido de Levotiroxina.",
+    "recomendacao": "Tomar Levotiroxina 30-60 minutos antes do Omeprazol e do café da manhã.",
+    "evidencia": "Moderada"
+  },
+  {
+    "med1": "Metoclopramida",
+    "med2": "Haloperidol",
+    "severidade": "grave",
+    "descricao": "Risco muito elevado de sintomas extrapiramidais agudos, distonia e discinesia tardia.",
+    "mecanismo": "Bloqueio dopaminérgico D2 sinérgico nas vias nigroestriatais.",
+    "recomendacao": "Evitar combinação. Em náuseas, considerar Ondansetrona ou Dimenidrinato.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Digoxina",
+    "med2": "Furosemida",
+    "severidade": "grave",
+    "descricao": "Intoxicação digitálica severa (arritmias cardíacas graves, náuseas, visão amarelada).",
+    "mecanismo": "Furosemida causa hipocalemia e hipomagnesemia, que aumentam muito a afinidade e toxicidade da Digoxina no miocárdio.",
+    "recomendacao": "Monitorar rigorosamente os níveis de potássio e ECG. Suplementar potássio se necessário.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Digoxina",
+    "med2": "Claritromicina",
+    "severidade": "grave",
+    "descricao": "Aumento expressivo da concentração plasmática de Digoxina.",
+    "mecanismo": "Claritromicina inibe a P-glicoproteína (P-gp), reduzindo a excreção renal e intestinal da Digoxina.",
+    "recomendacao": "Reduzir dose da Digoxina e monitorar sinais de toxicidade.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Ciprofloxacino",
+    "med2": "Carbonato de Cálcio",
+    "severidade": "moderada",
+    "descricao": "Redução drástica (até 70%) da absorção oral do antibiótico e falha terapêutica.",
+    "mecanismo": "Formação de complexo quelato insolúvel entre o cátion divalente (Ca2+) e a quinolona.",
+    "recomendacao": "Tomar o Ciprofloxacino pelo menos 2 horas antes ou 6 horas depois de antiácidos/cálcio.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Ciprofloxacino",
+    "med2": "Sulfato Ferroso",
+    "severidade": "moderada",
+    "descricao": "Redução acentuada da biodisponibilidade do Ciprofloxacino.",
+    "mecanismo": "Quelação com íons de ferro no trato digestivo.",
+    "recomendacao": "Respeitar intervalo de 2 horas antes ou 4 a 6 horas após.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Amoxicilina",
+    "med2": "Anticoncepcional Oral",
+    "severidade": "leve",
+    "descricao": "Potencial pequena redução na eficácia contraceptiva oral (controverso na literatura atual).",
+    "mecanismo": "Alteração transitória da flora bacteriana intestinal e recirculação entero-hepática de estrogênios.",
+    "recomendacao": "Recomenda-se precaução com método de barreira (preservativo) durante o ciclo de antibiótico.",
+    "evidencia": "Baixa"
+  },
+  {
+    "med1": "Fluoxetina",
+    "med2": "Amitriptilina",
+    "severidade": "grave",
+    "descricao": "Aumento tóxico dos níveis séricos de Amitriptilina (arritmias cardíacas, efeitos anticolinérgicos graves).",
+    "mecanismo": "Fluoxetina inibe fortemente o citocromo CYP2D6 responsável pelo metabolismo do antidepressivo tricíclico.",
+    "recomendacao": "Se indispensável, iniciar Amitriptilina em doses muito baixas (10-25mg) e monitorar ECG.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Ciclobenzaprina",
+    "med2": "Fluoxetina",
+    "severidade": "grave",
+    "descricao": "Risco de Síndrome Serotoninérgica e sedação excessiva.",
+    "mecanismo": "Ciclobenzaprina tem estrutura química tricíclica com atividade serotoninérgica e anticolinérgica.",
+    "recomendacao": "Evitar combinação prolongada. Avaliar relaxante muscular alternativo ou reduzir dose.",
+    "evidencia": "Moderada"
+  },
+  {
+    "med1": "Paracetamol",
+    "med2": "Álcool",
+    "severidade": "grave",
+    "descricao": "Hepatotoxicidade aguda e necrose hepática, especialmente com consumo crônico de álcool.",
+    "mecanismo": "O álcool induz a CYP2E1 que converte o Paracetamol no metabólito reativo NAPQI tóxico ao fígado.",
+    "recomendacao": "Limitar a dose diária de Paracetamol a no máximo 2g em etilistas e nunca associar em doses elevadas.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Atenolol",
+    "med2": "Anlodipino",
+    "severidade": "leve",
+    "descricao": "Potencialização benéfica anti-hipertensiva, com risco leve de bradicardia ou hipotensão ortostática.",
+    "mecanismo": "Mecanismos sinérgicos complementares (vasodilatação periférica + redução do débito cardíaco).",
+    "recomendacao": "Associação clínica comum e segura sob prescrição. Orientar o paciente ao levantar-se da cama.",
+    "evidencia": "Alta"
+  },
+  {
+    "med1": "Metformina",
+    "med2": "Contraste Iodado Radiológico",
+    "severidade": "grave",
+    "descricao": "Insuficiência renal aguda por contraste levando ao acúmulo de Metformina e Acidose Láctica fatal.",
+    "mecanismo": "Nefropatia induzida por contraste reduz excreção renal de Metformina.",
+    "recomendacao": "Suspender a Metformina 48 horas antes do exame contrastado e reiniciar 48h após conferência da função renal.",
+    "evidencia": "Alta"
+  }
+]

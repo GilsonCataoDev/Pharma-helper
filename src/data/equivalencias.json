@@ -1,0 +1,443 @@
+[
+  {
+    "principioAtivo": "Dipirona Monoidratada",
+    "referencia": "Novalgina",
+    "laboratorioRef": "Sanofi",
+    "genericos": ["Dipirona Sódica Genérico (EMS)", "Dipirona (Medley)", "Dipirona (Eurofarma)", "Dipirona (Neo Química)"],
+    "similares": ["Anador", "Lisador", "Doralgina"],
+    "forma": "Comprimido",
+    "concentracoes": ["500mg", "1g"]
+  },
+  {
+    "principioAtivo": "Dipirona Monoidratada",
+    "referencia": "Novalgina Gotas",
+    "laboratorioRef": "Sanofi",
+    "genericos": ["Dipirona Solução Oral (EMS)", "Dipirona Gotas (Medley)", "Dipirona (Teuto)"],
+    "similares": ["Anador Gotas"],
+    "forma": "Gotas / Solução Oral",
+    "concentracoes": ["500mg/mL"]
+  },
+  {
+    "principioAtivo": "Paracetamol",
+    "referencia": "Tylenol",
+    "laboratorioRef": "Kenvue / J&J",
+    "genericos": ["Paracetamol (EMS)", "Paracetamol (Medley)", "Paracetamol (Eurofarma)", "Paracetamol (Prati-Donaduzzi)"],
+    "similares": ["Dôrico", "Pacemol"],
+    "forma": "Comprimido",
+    "concentracoes": ["500mg", "750mg"]
+  },
+  {
+    "principioAtivo": "Paracetamol Gotas",
+    "referencia": "Tylenol Gotas / Bebê",
+    "laboratorioRef": "Kenvue / J&J",
+    "genericos": ["Paracetamol Solução Oral (Medley)", "Paracetamol Gotas (EMS)"],
+    "similares": ["Dôrico Gotas"],
+    "forma": "Gotas / Solução Oral",
+    "concentracoes": ["200mg/mL", "100mg/mL Bebê"]
+  },
+  {
+    "principioAtivo": "Ibuprofeno",
+    "referencia": "Advil / Alivium",
+    "laboratorioRef": "Haleon / Hypera",
+    "genericos": ["Ibuprofeno (EMS)", "Ibuprofeno (Medley)", "Ibuprofeno (Eurofarma)", "Ibuprofeno (Neo Química)"],
+    "similares": ["Ibumove", "Dalsy", "Spidufen"],
+    "forma": "Cápsula Líquida / Comprimido",
+    "concentracoes": ["400mg", "600mg"]
+  },
+  {
+    "principioAtivo": "Ibuprofeno Gotas",
+    "referencia": "Alivium Gotas",
+    "laboratorioRef": "Hypera",
+    "genericos": ["Ibuprofeno Gotas (Medley)", "Ibuprofeno Gotas (EMS)", "Ibuprofeno Gotas (Teuto)"],
+    "similares": ["Dalsy Suspensão"],
+    "forma": "Gotas / Suspensão Oral",
+    "concentracoes": ["50mg/mL", "100mg/mL"]
+  },
+  {
+    "principioAtivo": "Amoxicilina",
+    "referencia": "Amoxil",
+    "laboratorioRef": "GSK",
+    "genericos": ["Amoxicilina (EMS)", "Amoxicilina (Medley)", "Amoxicilina (Eurofarma)", "Amoxicilina (Teuto)"],
+    "similares": ["Novocilin", "Amobiotic"],
+    "forma": "Cápsula / Comprimido",
+    "concentracoes": ["500mg", "875mg"]
+  },
+  {
+    "principioAtivo": "Amoxicilina Suspensão",
+    "referencia": "Amoxil Suspensão",
+    "laboratorioRef": "GSK",
+    "genericos": ["Amoxicilina Pó para Suspensão (EMS)", "Amoxicilina (Medley)", "Amoxicilina (Eurofarma)"],
+    "similares": ["Novocilin Suspensão"],
+    "forma": "Suspensão Oral",
+    "concentracoes": ["250mg/5mL", "500mg/5mL"]
+  },
+  {
+    "principioAtivo": "Amoxicilina + Clavulanato de Potássio",
+    "referencia": "Clavulin",
+    "laboratorioRef": "GSK",
+    "genericos": ["Amoxicilina + Clavulanato de Potássio (EMS)", "Amoxicilina + Clavulanato (Eurofarma)", "Amoxicilina + Clavulanato (Medley)"],
+    "similares": ["Sinot Clav", "Policlavum"],
+    "forma": "Comprimido",
+    "concentracoes": ["500mg + 125mg", "875mg + 125mg"]
+  },
+  {
+    "principioAtivo": "Azitromicina Di-hidratada",
+    "referencia": "Zitromax",
+    "laboratorioRef": "Pfizer",
+    "genericos": ["Azitromicina (EMS)", "Azitromicina (Medley)", "Azitromicina (Eurofarma)", "Azitromicina (Neo Química)"],
+    "similares": ["Astro", "Azitrolab", "Clindal AZ"],
+    "forma": "Comprimido",
+    "concentracoes": ["500mg"]
+  },
+  {
+    "principioAtivo": "Azitromicina Suspensão",
+    "referencia": "Zitromax Suspensão",
+    "laboratorioRef": "Pfizer",
+    "genericos": ["Azitromicina Pó para Suspensão (EMS)", "Azitromicina (Eurofarma)"],
+    "similares": ["Astro Suspensão"],
+    "forma": "Suspensão Oral",
+    "concentracoes": ["600mg (200mg/5mL)", "900mg (200mg/5mL)"]
+  },
+  {
+    "principioAtivo": "Cefalexina",
+    "referencia": "Keflex",
+    "laboratorioRef": "Eli Lilly",
+    "genericos": ["Cefalexina (EMS)", "Cefalexina (Medley)", "Cefalexina (Teuto)", "Cefalexina (Eurofarma)"],
+    "similares": ["Cefagel", "Cefalexin"],
+    "forma": "Drágea / Cápsula",
+    "concentracoes": ["500mg"]
+  },
+  {
+    "principioAtivo": "Ciprofloxacino",
+    "referencia": "Cipro",
+    "laboratorioRef": "Bayer",
+    "genericos": ["Cloridrato de Ciprofloxacino (Medley)", "Ciprofloxacino (EMS)", "Ciprofloxacino (Eurofarma)"],
+    "similares": ["Ciproflan", "Proflox"],
+    "forma": "Comprimido",
+    "concentracoes": ["500mg"]
+  },
+  {
+    "principioAtivo": "Nimesulida",
+    "referencia": "Scaflam / Nisulid",
+    "laboratorioRef": "Aché",
+    "genericos": ["Nimesulida (EMS)", "Nimesulida (Medley)", "Nimesulida (Eurofarma)", "Nimesulida (Neo Química)"],
+    "similares": ["Cimelide", "Nisoflan", "Maxsulid"],
+    "forma": "Comprimido",
+    "concentracoes": ["100mg"]
+  },
+  {
+    "principioAtivo": "Nimesulida Gotas",
+    "referencia": "Scaflam Gotas",
+    "laboratorioRef": "Aché",
+    "genericos": ["Nimesulida Gotas (EMS)", "Nimesulida Gotas (Medley)"],
+    "similares": ["Cimelide Gotas"],
+    "forma": "Gotas / Solução Oral",
+    "concentracoes": ["50mg/mL"]
+  },
+  {
+    "principioAtivo": "Diclofenaco de Sódio",
+    "referencia": "Voltaren",
+    "laboratorioRef": "Novartis",
+    "genericos": ["Diclofenaco Sódico (EMS)", "Diclofenaco Sódico (Medley)", "Diclofenaco Sódico (Teuto)"],
+    "similares": ["Biofenac", "Clofenak"],
+    "forma": "Comprimido de Liberação Retardada",
+    "concentracoes": ["50mg", "100mg Retard"]
+  },
+  {
+    "principioAtivo": "Diclofenaco Potássico",
+    "referencia": "Cataflam",
+    "laboratorioRef": "Novartis / Haleon",
+    "genericos": ["Diclofenaco Potássico (EMS)", "Diclofenaco Potássico (Medley)", "Diclofenaco Potássico (Neo Química)"],
+    "similares": ["Flogan", "Cataflex"],
+    "forma": "Drágea / Comprimido",
+    "concentracoes": ["50mg"]
+  },
+  {
+    "principioAtivo": "Cetoprofeno",
+    "referencia": "Profenid",
+    "laboratorioRef": "Sanofi",
+    "genericos": ["Cetoprofeno (EMS)", "Cetoprofeno (Medley)", "Cetoprofeno (Eurofarma)"],
+    "similares": ["Bi-Profenid", "Artin"],
+    "forma": "Comprimido",
+    "concentracoes": ["100mg", "150mg (Bi-Profenid)"]
+  },
+  {
+    "principioAtivo": "Omeprazol",
+    "referencia": "Losec Mups / Peprazol",
+    "laboratorioRef": "AstraZeneca / Libbs",
+    "genericos": ["Omeprazol (EMS)", "Omeprazol (Medley)", "Omeprazol (Eurofarma)", "Omeprazol (Neo Química)"],
+    "similares": ["Gasec", "Omepramix", "Elum"],
+    "forma": "Cápsula com Microgrânulos",
+    "concentracoes": ["20mg", "40mg"]
+  },
+  {
+    "principioAtivo": "Pantoprazol",
+    "referencia": "Pantozol",
+    "laboratorioRef": "Takeda",
+    "genericos": ["Pantoprazol Sódico Sesqui-hidratado (EMS)", "Pantoprazol (Medley)", "Pantoprazol (Eurofarma)"],
+    "similares": ["Peptovit", "Pantocal"],
+    "forma": "Comprimido Revestido",
+    "concentracoes": ["20mg", "40mg"]
+  },
+  {
+    "principioAtivo": "Esomeprazol",
+    "referencia": "Nexium",
+    "laboratorioRef": "AstraZeneca",
+    "genericos": ["Esomeprazol Magnésico (EMS)", "Esomeprazol (Medley)", "Esomeprazol (Eurofarma)"],
+    "similares": ["Esomex", "Ezopen"],
+    "forma": "Comprimido",
+    "concentracoes": ["20mg", "40mg"]
+  },
+  {
+    "principioAtivo": "Losartana Potássica",
+    "referencia": "Cozaar",
+    "laboratorioRef": "Merck Sharp & Dohme (MSD)",
+    "genericos": ["Losartana Potássica (EMS)", "Losartana Potássica (Medley)", "Losartana Potássica (Neo Química)", "Losartana Potássica (Eurofarma)"],
+    "similares": ["Aradois", "Torlos", "Corus"],
+    "forma": "Comprimido",
+    "concentracoes": ["50mg", "100mg"]
+  },
+  {
+    "principioAtivo": "Losartana + Hidroclorotiazida",
+    "referencia": "Hyzaar",
+    "laboratorioRef": "MSD",
+    "genericos": ["Losartana + Hidroclorotiazida (EMS)", "Losartana + Hidroclorotiazida (Medley)"],
+    "similares": ["Aradois H", "Corus H"],
+    "forma": "Comprimido",
+    "concentracoes": ["50mg + 12,5mg", "100mg + 25mg"]
+  },
+  {
+    "principioAtivo": "Maleato de Enalapril",
+    "referencia": "Renitec",
+    "laboratorioRef": "MSD",
+    "genericos": ["Maleato de Enalapril (EMS)", "Maleato de Enalapril (Medley)", "Maleato de Enalapril (Teuto)"],
+    "similares": ["Eupressin", "Vasopril", "Gliotenz"],
+    "forma": "Comprimido",
+    "concentracoes": ["5mg", "10mg", "20mg"]
+  },
+  {
+    "principioAtivo": "Besilato de Anlodipino",
+    "referencia": "Norvasc",
+    "laboratorioRef": "Pfizer",
+    "genericos": ["Besilato de Anlodipino (EMS)", "Besilato de Anlodipino (Medley)", "Besilato de Anlodipino (Eurofarma)"],
+    "similares": ["Cordarex", "Nicord", "Pressat"],
+    "forma": "Comprimido",
+    "concentracoes": ["5mg", "10mg"]
+  },
+  {
+    "principioAtivo": "Atenolol",
+    "referencia": "Atenol",
+    "laboratorioRef": "AstraZeneca",
+    "genericos": ["Atenolol (EMS)", "Atenolol (Medley)", "Atenolol (Neo Química)"],
+    "similares": ["Angipress", "Atenorex", "Plenacor"],
+    "forma": "Comprimido",
+    "concentracoes": ["25mg", "50mg", "100mg"]
+  },
+  {
+    "principioAtivo": "Succinato de Metoprolol",
+    "referencia": "Selozok",
+    "laboratorioRef": "AstraZeneca",
+    "genericos": ["Succinato de Metoprolol (EMS)", "Succinato de Metoprolol (Medley)", "Succinato de Metoprolol (Eurofarma)"],
+    "similares": ["Selopress", "Metoprolol XR"],
+    "forma": "Comprimido de Liberação Prolongada",
+    "concentracoes": ["25mg", "50mg", "100mg"]
+  },
+  {
+    "principioAtivo": "Cloridrato de Metformina",
+    "referencia": "Glifage",
+    "laboratorioRef": "Merck",
+    "genericos": ["Cloridrato de Metformina (EMS)", "Cloridrato de Metformina (Medley)", "Cloridrato de Metformina (Prati-Donaduzzi)"],
+    "similares": ["Dimefor", "Formigluc"],
+    "forma": "Comprimido",
+    "concentracoes": ["500mg", "850mg"]
+  },
+  {
+    "principioAtivo": "Cloridrato de Metformina XR",
+    "referencia": "Glifage XR",
+    "laboratorioRef": "Merck",
+    "genericos": ["Cloridrato de Metformina de Liberação Prolongada (EMS)", "Metformina XR (Medley)"],
+    "similares": ["Diaformin XR"],
+    "forma": "Comprimido de Liberação Prolongada",
+    "concentracoes": ["500mg", "750mg", "1000mg"]
+  },
+  {
+    "principioAtivo": "Glibenclamida",
+    "referencia": "Daonil",
+    "laboratorioRef": "Sanofi",
+    "genericos": ["Glibenclamida (EMS)", "Glibenclamida (Medley)", "Glibenclamida (Teuto)"],
+    "similares": ["Glidanil", "Gliconil"],
+    "forma": "Comprimido",
+    "concentracoes": ["5mg"]
+  },
+  {
+    "principioAtivo": "Atorvastatina Cálcica",
+    "referencia": "Lipitor",
+    "laboratorioRef": "Pfizer / Viatris",
+    "genericos": ["Atorvastatina Cálcica (EMS)", "Atorvastatina Cálcica (Medley)", "Atorvastatina Cálcica (Eurofarma)"],
+    "similares": ["Citalor", "Vast", "Lipex"],
+    "forma": "Comprimido Revestido",
+    "concentracoes": ["10mg", "20mg", "40mg", "80mg"]
+  },
+  {
+    "principioAtivo": "Rosuvastatina Cálcica",
+    "referencia": "Crestor",
+    "laboratorioRef": "AstraZeneca",
+    "genericos": ["Rosuvastatina Cálcica (EMS)", "Rosuvastatina Cálcica (Medley)", "Rosuvastatina Cálcica (Eurofarma)"],
+    "similares": ["Vivacor", "Rosucor", "Plenance"],
+    "forma": "Comprimido Revestido",
+    "concentracoes": ["10mg", "20mg"]
+  },
+  {
+    "principioAtivo": "Sinvastatina",
+    "referencia": "Zocor",
+    "laboratorioRef": "MSD",
+    "genericos": ["Sinvastatina (EMS)", "Sinvastatina (Medley)", "Sinvastatina (Neo Química)"],
+    "similares": ["Sinvasmax", "Vaslip"],
+    "forma": "Comprimido",
+    "concentracoes": ["10mg", "20mg", "40mg"]
+  },
+  {
+    "principioAtivo": "Clonazepam",
+    "referencia": "Rivotril",
+    "laboratorioRef": "Roche",
+    "genericos": ["Clonazepam (EMS)", "Clonazepam (Medley)", "Clonazepam (Eurofarma)", "Clonazepam (Neo Química)"],
+    "similares": ["Clonavita", "Epileptil"],
+    "forma": "Comprimido",
+    "concentracoes": ["0,5mg", "2mg"]
+  },
+  {
+    "principioAtivo": "Clonazepam Gotas",
+    "referencia": "Rivotril Gotas",
+    "laboratorioRef": "Roche",
+    "genericos": ["Clonazepam Solução Oral (EMS)", "Clonazepam Gotas (Medley)", "Clonazepam Gotas (Eurofarma)"],
+    "similares": ["Clonavita Gotas"],
+    "forma": "Gotas / Solução Oral",
+    "concentracoes": ["2,5mg/mL"]
+  },
+  {
+    "principioAtivo": "Alprazolam",
+    "referencia": "Frontal",
+    "laboratorioRef": "Pfizer / Upjohn",
+    "genericos": ["Alprazolam (EMS)", "Alprazolam (Medley)", "Alprazolam (Eurofarma)"],
+    "similares": ["Apraz", "Tranquinal", "Alpraz"],
+    "forma": "Comprimido",
+    "concentracoes": ["0,25mg", "0,5mg", "1mg", "2mg"]
+  },
+  {
+    "principioAtivo": "Diazepam",
+    "referencia": "Valium",
+    "laboratorioRef": "Roche",
+    "genericos": ["Diazepam (Teuto)", "Diazepam (União Química)", "Diazepam (Santisa)"],
+    "similares": ["Dienpax", "Kiatrium"],
+    "forma": "Comprimido",
+    "concentracoes": ["5mg", "10mg"]
+  },
+  {
+    "principioAtivo": "Cloridrato de Fluoxetina",
+    "referencia": "Prozac",
+    "laboratorioRef": "Eli Lilly",
+    "genericos": ["Cloridrato de Fluoxetina (EMS)", "Cloridrato de Fluoxetina (Medley)", "Cloridrato de Fluoxetina (Eurofarma)"],
+    "similares": ["Daforin", "Verotina", "Eufor 20"],
+    "forma": "Cápsula",
+    "concentracoes": ["20mg"]
+  },
+  {
+    "principioAtivo": "Cloridrato de Sertralina",
+    "referencia": "Zoloft",
+    "laboratorioRef": "Pfizer",
+    "genericos": ["Cloridrato de Sertralina (EMS)", "Cloridrato de Sertralina (Medley)", "Cloridrato de Sertralina (Eurofarma)"],
+    "similares": ["Assert", "Serenata", "Tolrest"],
+    "forma": "Comprimido Revestido",
+    "concentracoes": ["50mg", "100mg"]
+  },
+  {
+    "principioAtivo": "Oxalato de Escitalopram",
+    "referencia": "Lexapro",
+    "laboratorioRef": "Lundbeck",
+    "genericos": ["Oxalato de Escitalopram (EMS)", "Oxalato de Escitalopram (Medley)", "Oxalato de Escitalopram (Eurofarma)"],
+    "similares": ["Reconter", "Exodus", "Espran"],
+    "forma": "Comprimido",
+    "concentracoes": ["10mg", "15mg", "20mg"]
+  },
+  {
+    "principioAtivo": "Levotiroxina Sódica",
+    "referencia": "Puran T4 / Synthroid",
+    "laboratorioRef": "Sanofi / Abbott",
+    "genericos": ["Levotiroxina Sódica (EMS)", "Levotiroxina Sódica (Merck)"],
+    "similares": ["Euthyrox", "Levoid"],
+    "forma": "Comprimido",
+    "concentracoes": ["25mcg", "50mcg", "75mcg", "88mcg", "100mcg", "112mcg", "125mcg", "150mcg"]
+  },
+  {
+    "principioAtivo": "Loratadina",
+    "referencia": "Claritin",
+    "laboratorioRef": "Bayer",
+    "genericos": ["Loratadina (EMS)", "Loratadina (Medley)", "Loratadina (Eurofarma)"],
+    "similares": ["Loralerg", "Desalex (Desloratadina)"],
+    "forma": "Comprimido / Xarope",
+    "concentracoes": ["10mg", "1mg/mL Xarope"]
+  },
+  {
+    "principioAtivo": "Prednisona",
+    "referencia": "Meticorten",
+    "laboratorioRef": "Schering-Plough / Organon",
+    "genericos": ["Prednisona (EMS)", "Prednisona (Medley)", "Prednisona (Eurofarma)"],
+    "similares": ["Corticorten", "Predsim (Prednisolona)"],
+    "forma": "Comprimido",
+    "concentracoes": ["5mg", "20mg"]
+  },
+  {
+    "principioAtivo": "Fluconazol",
+    "referencia": "Zoltec",
+    "laboratorioRef": "Pfizer",
+    "genericos": ["Fluconazol (EMS)", "Fluconazol (Medley)", "Fluconazol (Eurofarma)", "Fluconazol (Neo Química)"],
+    "similares": ["Triazol", "Flucazol"],
+    "forma": "Cápsula",
+    "concentracoes": ["150mg"]
+  },
+  {
+    "principioAtivo": "Cloridrato de Ciclobenzaprina",
+    "referencia": "Miosan",
+    "laboratorioRef": "Apsen",
+    "genericos": ["Cloridrato de Ciclobenzaprina (EMS)", "Cloridrato de Ciclobenzaprina (Eurofarma)"],
+    "similares": ["Musculare", "Mirtax"],
+    "forma": "Comprimido",
+    "concentracoes": ["5mg", "10mg"]
+  },
+  {
+    "principioAtivo": "Dipirona + Cafeína + Mucato de Isometepteno",
+    "referencia": "Neosaldina",
+    "laboratorioRef": "Takeda / Hypera",
+    "genericos": ["Dipirona + Cafeína + Isometepteno (EMS)", "Dipirona + Cafeína + Isometepteno (Medley)"],
+    "similares": ["Doralgina", "Neosaldrol", "Sedalgina"],
+    "forma": "Drágea",
+    "concentracoes": ["300mg + 30mg + 30mg"]
+  },
+  {
+    "principioAtivo": "Butilbrometo de Escopolamina",
+    "referencia": "Buscopan Simples",
+    "laboratorioRef": "Boehringer / Hypera",
+    "genericos": ["Butilbrometo de Escopolamina (EMS)", "Butilbrometo de Escopolamina (Teuto)"],
+    "similares": ["Butil", "Hioscina"],
+    "forma": "Drágea / Gotas",
+    "concentracoes": ["10mg Drágea", "10mg/mL Gotas"]
+  },
+  {
+    "principioAtivo": "Butilbrometo de Escopolamina + Dipirona",
+    "referencia": "Buscopan Composto",
+    "laboratorioRef": "Boehringer / Hypera",
+    "genericos": ["Butilbrometo de Escopolamina + Dipirona (EMS)", "Butilbrometo + Dipirona (Medley)"],
+    "similares": ["Belscopan Composto", "Butilcomposto"],
+    "forma": "Comprimido / Gotas",
+    "concentracoes": ["10mg + 250mg Comprimido", "6,67mg + 333,4mg/mL Gotas"]
+  },
+  {
+    "principioAtivo": "Simeticona",
+    "referencia": "Luftal",
+    "laboratorioRef": "Reckitt Benckiser",
+    "genericos": ["Simeticona (EMS)", "Simeticona (Medley)", "Simeticona (Eurofarma)"],
+    "similares": ["Flagass", "Gasoft"],
+    "forma": "Comprimido / Gotas / Cápsula Gel",
+    "concentracoes": ["40mg", "75mg/mL Gotas", "125mg Max"]
+  }
+]

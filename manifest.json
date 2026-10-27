@@ -1,0 +1,27 @@
+{
+  "name": "FarmaApp — Assistente Farmacêutico",
+  "short_name": "FarmaApp",
+  "description": "Assistente farmacêutico no seu bolso para receitas, interações, cálculos e pedidos",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#059669",
+  "theme_color": "#059669",
+  "orientation": "portrait",
+  "categories": ["medical", "health", "productivity"],
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "./assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
