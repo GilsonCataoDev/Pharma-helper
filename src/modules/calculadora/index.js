@@ -387,20 +387,34 @@ function renderDiluicaoTab() {
 }
 
 export function init() {
-  bindEvents();
+  bindTabEvents();
+  bindContentEvents();
 }
 
-function bindEvents() {
-  const content = document.getElementById('calc-tab-content');
+/**
+ * Attach listeners to the tab buttons (outside #calc-tab-content).
+ * Called once on init; tabs persist across refreshUI() calls.
+ */
+function bindTabEvents() {
   const tabs = document.querySelectorAll('[data-calc-tab]');
-
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       activeTab = tab.dataset.calcTab;
+      // Update active styling without full re-render
+      tabs.forEach(t => {
+        const isActive = t.dataset.calcTab === activeTab;
+        t.className = `flex-1 py-2 text-center rounded-lg transition-all ${isActive ? 'bg-white text-emerald-700 shadow-sm' : 'text-gray-600'}`;
+      });
       refreshUI();
     });
   });
+}
 
+/**
+ * Attach listeners to inputs INSIDE the tab content area.
+ * Called on init and after each refreshUI().
+ */
+function bindContentEvents() {
   // Pediatric bindings
   const presetSelect = document.getElementById('ped-preset');
   const pesoRange = document.getElementById('ped-peso-range');
@@ -436,16 +450,14 @@ function bindEvents() {
 
   if (mlInput) {
     mlInput.addEventListener('input', (e) => {
-      const val = parseFloat(e.target.value) || 0;
-      gotasState.mlInput = val;
+      gotasState.mlInput = parseFloat(e.target.value) || 0;
       refreshUI();
     });
   }
 
   if (gotasInput) {
     gotasInput.addEventListener('input', (e) => {
-      const val = parseFloat(e.target.value) || 0;
-      gotasState.gotasInput = val;
+      gotasState.gotasInput = parseFloat(e.target.value) || 0;
       refreshUI();
     });
   }
@@ -468,12 +480,17 @@ function bindEvents() {
 }
 
 function refreshUI() {
-  const container = document.getElementById('module-content');
-  if (container) {
-    container.innerHTML = render();
+  // Only re-render the tab content, NOT the full module (avoids re-attaching
+  // listeners on the tab buttons which live outside #calc-tab-content).
+  const tabContent = document.getElementById('calc-tab-content');
+  if (tabContent) {
+    tabContent.innerHTML = renderActiveTabContent();
     if (window.lucide) lucide.createIcons();
-    bindEvents();
+    // Re-bind only the content-level inputs (tabs already have listeners)
+    bindContentEvents();
   }
 }
 
-export function destroy() {}
+export function destroy() {
+  // No state reset intentional — keeps calculator values across re-visits
+}

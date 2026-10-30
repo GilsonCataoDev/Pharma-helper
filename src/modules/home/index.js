@@ -9,6 +9,16 @@ import * as SearchBar from '../../components/SearchBar.js';
  */
 const MODULES = [
   {
+    id: 'busca',
+    hash: '#/busca',
+    icon: 'search',
+    title: 'Busca de Medicamentos',
+    description: 'Indicações, cuidados, receita e posologia por IA',
+    available: true,
+    color: 'bg-violet-50 text-violet-700',
+    iconBg: 'bg-violet-100 text-violet-700',
+  },
+  {
     id: 'receitas',
     hash: '#/receitas',
     icon: 'clipboard-check',

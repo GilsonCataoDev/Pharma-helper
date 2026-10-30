@@ -6,23 +6,7 @@ import { getConferencias, addConferencia, deleteConferencia } from '../../db/dat
 
 let conferenciasList = [];
 let isCreating = false;
-
-// New item draft
-let draft = {
-  distribuidora: '',
-  nf: '',
-  medicamento: '',
-  lote: '',
-  validade: '',
-  qtdPedida: 1,
-  qtdRecebida: 1,
-  embalagemOk: true,
-  termolabil: false,
-  temperaturaChegada: '',
-  controlado: false,
-  divergencia: '',
-  status: 'Aprovado'
-};
+let draft = {}; // initialized by DEFAULT_DRAFT() in destroy() / on first use
 
 export function render() {
   return /* html */ `
@@ -285,6 +269,24 @@ function refreshUI() {
   }
 }
 
+const DEFAULT_DRAFT = () => ({
+  distribuidora: '',
+  nf: '',
+  medicamento: '',
+  lote: '',
+  validade: '',
+  qtdPedida: 1,
+  qtdRecebida: 1,
+  embalagemOk: true,
+  termolabil: false,
+  temperaturaChegada: '',
+  controlado: false,
+  divergencia: '',
+  status: 'Aprovado'
+});
+
 export function destroy() {
   isCreating = false;
+  draft = DEFAULT_DRAFT(); // reset draft so stale values don't persist
+  conferenciasList = [];
 }

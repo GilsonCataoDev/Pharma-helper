@@ -21,6 +21,7 @@ const ROUTES = {
   '#/pedidos':      () => import('./modules/pedidos/index.js'),
   '#/indicacoes':   () => import('./modules/indicacoes/index.js'),
   '#/calculadora':  () => import('./modules/calculadora/index.js'),
+  '#/busca':        () => import('./modules/busca/index.js'),
 };
 
 /** Currently loaded module reference (for cleanup). */
@@ -38,6 +39,15 @@ function getCurrentHash() {
 }
 
 /**
+ * Reinitialize Lucide icons exactly once per navigation cycle.
+ * Calling createIcons() multiple times stacks hidden spans — call once after
+ * all HTML is settled.
+ */
+function refreshIcons() {
+  if (window.lucide) lucide.createIcons();
+}
+
+/**
  * Navigate to a route — renders layout + module content.
  */
 async function navigate() {
@@ -48,6 +58,7 @@ async function navigate() {
   // Cleanup previous module
   if (currentModule && typeof currentModule.destroy === 'function') {
     currentModule.destroy();
+    currentModule = null;
   }
 
   // Render the layout shell (header + content + navbar)
@@ -55,7 +66,7 @@ async function navigate() {
     ${Header.render(hash)}
     <main class="app-content" id="module-content" role="main">
       <div class="flex items-center justify-center p-8" style="min-height: 40vh;">
-        <div class="animate-pulse text-gray-300">
+        <div class="text-gray-300">
           <i data-lucide="loader-2" class="w-8 h-8 animate-spin text-emerald-600"></i>
         </div>
       </div>
@@ -63,11 +74,9 @@ async function navigate() {
     ${NavBar.render(hash)}
   `;
 
-  // Initialize icons in the shell
-  if (window.lucide) lucide.createIcons();
-
-  // Initialize navbar (more menu toggle)
+  // Initialize navbar (more menu toggle) + icon pass for shell
   NavBar.init();
+  refreshIcons(); // ← single icon pass for the shell
 
   // Load the module
   const contentEl = document.getElementById('module-content');
@@ -81,16 +90,13 @@ async function navigate() {
     // Render module content
     contentEl.innerHTML = mod.render();
 
-    // Reinitialize icons after module render
-    if (window.lucide) lucide.createIcons();
-
-    // Call module init for event listeners
+    // Call module init for event listeners (init may re-render internally)
     if (typeof mod.init === 'function') {
       await mod.init();
     }
 
-    // Final icon pass (some inits re-render)
-    if (window.lucide) lucide.createIcons();
+    // Single icon pass after module is fully settled
+    refreshIcons();
   } catch (err) {
     console.error('[App] Failed to load module:', err);
     contentEl.innerHTML = /* html */ `
@@ -101,7 +107,7 @@ async function navigate() {
         <a href="#/" class="mt-4 text-xs font-bold bg-emerald-600 text-white px-4 py-2 rounded-xl">Voltar ao início</a>
       </div>
     `;
-    if (window.lucide) lucide.createIcons();
+    refreshIcons();
   }
 }
 
@@ -112,7 +118,6 @@ async function navigate() {
 async function registerServiceWorker() {
   if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
     try {
-      // Relative sw registration
       const swUrl = new URL('sw.js', window.location.href).href;
       const reg = await navigator.serviceWorker.register(swUrl);
       console.log('[App] Service Worker registered:', reg.scope);
@@ -148,8 +153,8 @@ async function initApp() {
   // Initial render
   await navigate();
 
-  // Register service worker
-  await registerServiceWorker();
+  // Register service worker after first render (non-blocking)
+  registerServiceWorker();
 
   console.log('[App] FarmaApp ready!');
 }

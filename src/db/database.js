@@ -31,20 +31,33 @@ export function getDB() {
 // Helper: Safe JSON loader with relative base
 // ──────────────────────────────────────
 async function loadJsonData(filename) {
+  // Build URL candidates from most to least reliable:
+  // 1. Relative to the module's own location (src/db/ → src/data/)
+  // 2. Relative to <base href> or document URL root
+  const candidates = [];
+
   try {
-    // Derive relative path based on location
-    const basePath = window.location.pathname.endsWith('/') 
-      ? window.location.pathname 
-      : window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
-    
-    const targetUrl = new URL(`src/data/${filename}`, window.location.origin + basePath).href;
-    const response = await fetch(targetUrl);
-    if (response.ok) {
-      return await response.json();
+    // Module-relative: this file is at src/db/database.js → data is at src/data/
+    candidates.push(new URL(`../data/${filename}`, import.meta.url).href);
+  } catch (_) { /* import.meta.url unavailable in some non-standard runtimes */ }
+
+  try {
+    // Document-root fallback: always place data at /src/data/ from the origin
+    const docBase = document.querySelector('base')?.href || window.location.origin + '/';
+    candidates.push(new URL(`src/data/${filename}`, docBase).href);
+  } catch (_) { /* ignore */ }
+
+  for (const url of candidates) {
+    try {
+      const response = await fetch(url);
+      if (response.ok) {
+        return await response.json();
+      }
+    } catch (err) {
+      console.warn(`[DB] Could not load JSON from ${url}:`, err);
     }
-  } catch (err) {
-    console.warn(`[DB] Could not load JSON ${filename} via fetch:`, err);
   }
+
   return null;
 }
 
@@ -321,13 +334,21 @@ export async function checkInteracoes(drugsList) {
       const d2 = normalized[j];
 
       const matches = allInteractions.filter(item => {
-        const med1 = (item.med1 || '').toLowerCase();
-        const med2 = (item.med2 || '').toLowerCase();
-        return (
-          (d1.includes(med1) || med1.includes(d1)) && (d2.includes(med2) || med2.includes(d2))
-        ) || (
-          (d1.includes(med2) || med2.includes(d1)) && (d2.includes(med1) || med1.includes(d2))
+        const med1 = (item.med1 || '').toLowerCase().trim();
+        const med2 = (item.med2 || '').toLowerCase().trim();
+        // Require minimum length to avoid single-letter false positives
+        if (med1.length < 3 || med2.length < 3) return false;
+        // Use word-boundary style check: each drug name must be a substring of the other
+        // but the DB entry must be specific enough (not just a letter match)
+        const matchFwd = (
+          (med1.includes(d1) || d1.includes(med1)) &&
+          (med2.includes(d2) || d2.includes(med2))
         );
+        const matchRev = (
+          (med1.includes(d2) || d2.includes(med1)) &&
+          (med2.includes(d1) || d1.includes(med2))
+        );
+        return matchFwd || matchRev;
       });
 
       matches.forEach(m => {

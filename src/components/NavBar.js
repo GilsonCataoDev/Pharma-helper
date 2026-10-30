@@ -17,6 +17,7 @@ const TABS = [
  * Extra menu items shown in the "Mais" dropdown.
  */
 const MORE_ITEMS = [
+  { hash: '#/busca',        icon: 'search',         label: 'Busca de Medicamentos' },
   { hash: '#/calculadora',  icon: 'calculator',     label: 'Calculadora de Doses' },
   { hash: '#/pedidos',      icon: 'package-check',  label: 'Conferência de Pedidos' },
   { hash: '#/indicacoes',   icon: 'stethoscope',    label: 'Guia de Indicações MIPs' },
