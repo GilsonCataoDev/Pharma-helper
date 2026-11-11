@@ -4,6 +4,10 @@
 
 > **Versão em produção:** o app publicado em [pharma-plum-chi.vercel.app](https://pharma-plum-chi.vercel.app) evoluiu a partir deste repositório e faz a busca com IA por uma função serverless (a chave do Gemini fica no servidor). Este repositório público guarda a **versão inicial**, em que a chave é informada pelo próprio usuário.
 
+![Tela inicial do FarmaApp (versão em produção)](assets/farmaapp-tela-inicial.jpg)
+
+*Tela inicial da versão em produção, em [pharma-plum-chi.vercel.app](https://pharma-plum-chi.vercel.app).*
+
 ---
 
 ## 📱 Por que um PWA?
