@@ -1,13 +1,15 @@
 # 💊 FarmaApp (Pharma-Helper)
 
-> **Assistente Farmacêutico de Bolso** — Progressive Web App (PWA) responsivo, gratuito e **100% offline**, projetado para uso diário no balcão e retaguarda de farmácias e drogarias no celular (iOS e Android), sem precisar pagar taxas da Apple Developer ou Google Play.
+> **Assistente Farmacêutico de Bolso** — Progressive Web App (PWA) responsivo, gratuito e **offline nas consultas locais**, projetado para uso diário no balcão e retaguarda de farmácias e drogarias no celular (iOS e Android), sem precisar pagar taxas da Apple Developer ou Google Play.
+
+> **Versão em produção:** o app publicado em [pharma-plum-chi.vercel.app](https://pharma-plum-chi.vercel.app) evoluiu a partir deste repositório e faz a busca com IA por uma função serverless (a chave do Gemini fica no servidor). Este repositório público guarda a **versão inicial**, em que a chave é informada pelo próprio usuário.
 
 ---
 
 ## 📱 Por que um PWA?
 - **Zero custo de loja**: Não precisa pagar a anuidade da Apple (\$99/ano) nem conta Google Play.
 - **Instalável como App Nativo**: Funciona em tela cheia no iPhone e Android sem barra de navegador.
-- **Funciona Offline**: Graças ao Service Worker e banco de dados local IndexedDB (Dexie.js), você pode consultar medicamentos, receitas e interações mesmo sem sinal de Wi-Fi ou 4G dentro da farmácia.
+- **Funciona Offline**: Graças ao Service Worker e banco de dados local IndexedDB (Dexie.js), você pode consultar medicamentos, receitas e interações da base local mesmo sem sinal de Wi-Fi ou 4G dentro da farmácia.
 
 ---
 
@@ -63,6 +65,12 @@
   - Rinite e Alergias
   - Diarreia e Reidratação Oral
 - **Sinais de Alerta Vermelhos (Red Flags)**: orienta quando NÃO medicar no balcão e encaminhar imediatamente para atendimento médico hospitalar.
+
+### 7. 🤖 Busca de Medicamentos com IA (Gemini)
+- Busca primeiro na base local; quando o medicamento não está nela, consulta o **Gemini** (`gemini-1.5-flash-latest`, camada gratuita) e mostra a resposta com o aviso de que ela é gerada por IA.
+- Nesta versão, o usuário informa a **própria chave da API do Gemini**, que fica salva apenas no navegador (`localStorage`). Sem a chave, só a base local responde.
+- Esta função **precisa de internet**. As demais continuam funcionando offline.
+- A resposta da IA é apoio à consulta: confira sempre a bula oficial da ANVISA.
 
 ---
 
@@ -122,6 +130,7 @@ npx serve .
 - **Dexie.js (IndexedDB)** — Armazenamento offline local no navegador do usuário.
 - **Service Worker** — Cache de aplicação e funcionamento offline.
 - **Lucide Icons** — Ícones clínicos elegantes e intuitivos.
+- **Gemini API** (Google) — Busca de medicamentos fora da base local, chamada direto do navegador com a chave do usuário.
 
 ---
 
